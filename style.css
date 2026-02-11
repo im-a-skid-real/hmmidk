@@ -1,107 +1,46 @@
-body {
-    background-color: #ffffff; 
-    color: #1a1a1a;           
-    line-height: 1.6;
-}
-
-.content-section {
-    padding: 100px 20px;
-    min-height: 80vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    border: 2px dashed #ccc; 
-    margin: 20px;
-}
-
-
-h1, h2 {
-    color: #2c3e50; 
-    margin-bottom: 20px;
-}
-
-p {
-    color: #333333; 
-    max-width: 600px;
-}
-
-
-#things {
-    background-color: #f0f4f8; 
-}
-html {
-    scroll-behavior: smooth;
-}
-
-
-.content-section {
-    padding: 100px 20px;
-    height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-}
-
-#about {
-    background-color: #ffffff;
-}
-
-#things {
-    background-color: #f9f9f9;
-}
-
-.dark-mode #about, 
-.dark-mode #things {
-    background-color: #1a1a1a;
-    border-color: #333;
-}
+/*global*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #ffffff;
+    color: #1a1a1a;
     line-height: 1.6;
-    transition: background 0.3s ease;
+    transition: background 0.3s, color 0.3s;
 }
 
+/*head */
 header {
     background: #2c3e50;
     color: white;
     padding: 1rem 0;
+    position: sticky; /* Keeps the menu at the top */
+    top: 0;
+    z-index: 100;
 }
 
-nav {
+nav, nav ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-nav ul {
-    display: flex;
     list-style: none;
 }
 
-nav ul li {
-    margin-left: 20px;
-}
+nav ul li { margin-left: 20px; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
 
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-#hero {
-    height: 80vh;
+/* part*/
+.content-section {
+    padding: 100px 20px;
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,17 +48,41 @@ nav a {
     text-align: center;
 }
 
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
+#hero { background-color: #f4f4f9; }
+#about { background-color: #ffffff; }
+#things { background-color: #f0f4f8; }
+
+/* bhuton*/
+#colorBtn {
+    position: fixed;   /* This makes it stay on screen while scrolling */
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    
+    padding: 15px 25px;
     background: #3498db;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+/* dork */
 .dark-mode {
-    background-color: #1a1a1a;
-    color: #f4f4f4;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode #hero, 
+.dark-mode #about, 
+.dark-mode #things {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode #colorBtn {
+    background-color: #f1c40f;
+    color: #121212;
 }
