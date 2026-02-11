@@ -24,3 +24,18 @@ btn.addEventListener('click', () => {
         btn.textContent = "black";
     }
 });
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        } else {
+//hmm
+        }
+    });
+}, {
+    threshold: 0.15 
+});
+
+const hiddenElements = document.querySelectorAll('.reveal');
+hiddenElements.forEach((el) => observer.observe(el));
