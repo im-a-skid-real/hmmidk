@@ -1,3 +1,18 @@
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+}
+
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+//save
+    let theme = 'light';
+    if (document.body.classList.contains('dark-mode')) {
+        theme = 'dark';
+    }
+    localStorage.setItem('theme', theme);
+});
 const btn = document.getElementById('colorBtn');
 
 btn.addEventListener('click', () => {
